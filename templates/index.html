@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="/static/estilos.css">
+<head>
+    <title>Lista de Artículos</title>
+    
+</head>
+<body>
+    <h1>Lista de Artículos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Clave</th>
+                <th>Descripción Corta</th>
+                <th>Descripción Larga</th>
+                <th>Unidad de Medida</th>
+                <th>Costo</th>
+                <th>Precio</th>
+                <th>Tipo de Cambio</th>
+                <th>Precio en Dólares</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            {% for articulo in articulos %}
+            <tr>
+                <td>{{ articulo.id }}</td>
+                <td><a href="{{ url_for('detalle_articulo', id=articulo.id) }}">{{ articulo.clave }}</a></td>
+                <td>{{ articulo.descripcion_corta }}</td>
+                <td>{{ articulo.descripcion_larga }}</td>
+                <td>{{ articulo.unidad_medida }}</td>
+                <td>${{ articulo.costo }}</td>
+                <td>${{ articulo.precio }}</td>
+                <td>${{ articulo.tipo_cambio }}</td>
+                <td>${{ articulo.precio_dolares }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('nuevo_articulo') }}" id="btnlb">Nuevo</a>
+</body>
+</html>
+

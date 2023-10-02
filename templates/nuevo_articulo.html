@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="/static/estilos.css">
+<head>
+    <title>Nuevo Artículo</title>
+</head>
+<body>
+    <h1>Nuevo Artículo</h1>
+    <form method="POST" action="{{ url_for('nuevo_articulo') }}">
+        <label for="clave">Clave del Artículo:</label>
+        <input type="text" id="clave" name="clave" required><br>
+
+        <label for="descripcion_corta">Descripción Corta:</label>
+        <input type="text" id="descripcion_corta" name="descripcion_corta" required><br>
+
+        <label for="descripcion_larga">Descripción Larga:</label>
+        <textarea id="descripcion_larga" name="descripcion_larga" rows="4" required></textarea><br>
+
+        <label for="unidad_medida">Unidad de Medida:</label>
+        <input type="text" id="unidad_medida" name="unidad_medida" required><br>
+
+        <label for="costo">Costo:</label>
+        <input type="number" id="costo" name="costo" step="0.01" required><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" step="0.01" required><br>
+
+        <!-- Tipo de Cambio y Precio en Dólares se llenarán automáticamente con la API -->
+        <input type="hidden" id="tipo_cambio" name="tipo_cambio" value="">
+        <input type="hidden" id="precio_dolares" name="precio_dolares" value="">
+
+        <button type="submit">Guardar</button>
+        <a href="{{ url_for('listar_articulos') }}" id="btnlb2">Cancelar</a>
+    </form>
+</body>
+</html>

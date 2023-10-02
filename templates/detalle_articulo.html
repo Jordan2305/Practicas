@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="/static/estilos.css">
+<head>
+    <title>Detalle de Artículo</title>
+</head>
+<body>
+    <h1>Detalle de Artículo</h1>
+    <table>
+        <tr>
+            <th>Clave</th>
+            <td>{{ articulo.clave }}</td>
+        </tr>
+        <tr>
+            <th>Descripción Corta</th>
+            <td>{{ articulo.descripcion_corta }}</td>
+        </tr>
+        <tr>
+            <th>Descripción Larga</th>
+            <td>{{ articulo.descripcion_larga }}</td>
+        </tr>
+        <tr>
+            <th>Unidad de Medida</th>
+            <td>{{ articulo.unidad_medida }}</td>
+        </tr>
+        <tr>
+            <th>Costo</th>
+            <td>{{ articulo.costo }}</td>
+        </tr>
+        <tr>
+            <th>Precio</th>
+            <td>{{ articulo.precio }}</td>
+        </tr>
+        <tr>
+            <th>Tipo de Cambio</th>
+            <td>{{ articulo.tipo_cambio }}</td>
+        </tr>
+        <tr>
+            <th>Precio en Dólares</th>
+            <td>{{ articulo.precio_dolares }}</td>
+        </tr>
+    </table>
+    <a href="{{ url_for('listar_articulos') }}" id="btnlb">Regresar a la página principal</a>
+</body>
+</html>
